@@ -7,32 +7,6 @@ exclude = "!.?,:;"
 for excluded_char in exclude:
     story = story.replace(excluded_char, "").replace("\n", "")
 
-new_story = story.split()
-
-counter_dict = {}
-for word in new_story:
-    if word in counter_dict.keys():
-        counter_dict[word] += 1
-    else:
-        counter_dict[word] = 1
-# print(help(list))
-
-# story = words.sort()
-
-sorted_list = sorted(counter_dict.items(), key=lambda x: x[1])
-
-new_list = []
-
-for num in range(20):
-    new_list.append(sorted_list.pop())
-    for wordlist, count in new_list:
-        new_new_list = "{} {}".format(wordlist, count)
-    print(new_new_list)
-
-
-# Hard Part
-
-print("\nExcluding certain words the new Most Common 20 words Are: ")
 ex_words = (" a ", " able ", " about ", " across ", " after ", " all ", " almost ", " also ", " am ", " among ", " an ",
             " and ", " any ", " are ", " as ", " at ", " be ",
             " because ", " been ", " but ", " by ", " can ", " cannot ", " could ", " dear ", " did ", " do ", " does ",
@@ -55,9 +29,12 @@ new_story = story.split()
 counter_dict = {}
 for word in new_story:
     if word in counter_dict.keys():
-        counter_dict[word] += "#"
+        counter_dict[word] += 1
     else:
-        counter_dict[word] = "#"
+        counter_dict[word] = 1
+# print(help(list))
+
+# story = words.sort()
 
 sorted_list = sorted(counter_dict.items(), key=lambda x: x[1])
 
